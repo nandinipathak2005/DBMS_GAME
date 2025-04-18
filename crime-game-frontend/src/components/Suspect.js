@@ -1,17 +1,17 @@
-// SuspectAnalysis.js
 import React, { useState } from 'react';
 
-function SuspectAnalysis() {
+function Suspect() {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const queryId = e.target.suspectQuerySelect.value;
 
-    fetch(`/api/execute-suspect-query/${queryId}`, {
+    // Fetch request to execute the query
+    fetch(`http://localhost:5000/api/suspect/execute-suspect-query/${queryId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ selectedQuery: queryId }),
+      //body: JSON.stringify({ selectedQuery: queryId }),  // Sending the queryId in the body
     })
       .then((response) => response.json())
       .then((data) => setMessage(data.message))
@@ -38,4 +38,4 @@ function SuspectAnalysis() {
   );
 }
 
-export default SuspectAnalysis;
+export default Suspect;

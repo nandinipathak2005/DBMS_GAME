@@ -8,7 +8,7 @@ function CrimeSceneQuery() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/execute-query/${selectedQuery}`, {
+      const response = await fetch(`http://localhost:5000/api/crime/execute-crime-query${selectedQuery}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ selectedQuery }),

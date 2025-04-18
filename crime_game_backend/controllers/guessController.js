@@ -1,5 +1,5 @@
 // controllers/guessController.js
-exports.checkFinalGuess = (req, res) => {
+exports.makeGuess = (req, res) => {
     const { weapon, cctv, suspect } = req.body;
   
     const correctCombination = { weapon: 'Knife', cctv: 'Video 1', suspect: 'Mario' };

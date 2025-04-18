@@ -10,7 +10,7 @@ function FinalGuess() {
     const cctv = e.target.cctvSelect.value;
     const suspect = e.target.suspectSelect.value;
 
-    fetch('/api/check-final-guess', {
+    fetch('http://localhost:5000/api/guess/execute-guess-query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ weapon, cctv, suspect }),
